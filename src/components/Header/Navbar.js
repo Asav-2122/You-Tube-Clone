@@ -37,9 +37,9 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
 
-  useEffect(() => {
-    getSearchQuery();
-  }, [query]);
+  // useEffect(() => {
+  //   getSearchQuery(ele);
+  // }, [query]);
 
   const getSearchQuery = (searchedQuery) => {
     console.log(searchedQuery);
@@ -134,7 +134,7 @@ const Navbar = () => {
                   <ul className="flex flex-col">
                     <li
                       className="hover:bg-gray-200 ml-3 p-1 flex items-center hover:cursor-pointer"
-                      onClick={()=>{setSearchQuery(ele)}}
+                      onClick={()=>{getSearchQuery(ele)}}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
