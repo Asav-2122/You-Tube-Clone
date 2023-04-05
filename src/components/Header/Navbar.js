@@ -9,6 +9,7 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [query, setQuery] = useState("");
   const dispatch = useDispatch();
   const searchCache = useSelector((store) => store.search);
 
@@ -34,6 +35,15 @@ const Navbar = () => {
         if (searchQuery) dispatch(cacheSearch({ searchQuery, res: res[1] }));
       })
       .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    getSearchQuery();
+  }, [query]);
+
+  const getSearchQuery = (searchedQuery) => {
+    console.log(searchedQuery);
+    setQuery(searchedQuery);
   };
 
   return (
@@ -122,7 +132,10 @@ const Navbar = () => {
               return (
                 <div key={index}>
                   <ul className="flex flex-col">
-                    <li className="hover:bg-gray-200 ml-3 p-1 flex items-center">
+                    <li
+                      className="hover:bg-gray-200 ml-3 p-1 flex items-center hover:cursor-pointer"
+                      onClick={()=>{setSearchQuery(ele)}}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"

@@ -9,7 +9,7 @@ export const YOUTUBE_SEARCH_API =
 export const YOUTUBE_RECOMMEND_VIDEO = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId="
 
 
-
+export const SEARCHED_VIDEOS = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=javascript&type=video&key=AIzaSyBf1gRfctpW9UxLB5Xx1uQSDzKU5ye8f2U"
 
 
 

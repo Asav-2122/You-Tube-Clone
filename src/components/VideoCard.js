@@ -4,21 +4,21 @@ const VideoCard = ({ videos }) => {
   const { snippet, statistics } = videos;
   const { channelTitle, title, thumbnails } = snippet;
   return (
-    <div className="w-[350px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5 h-72">
+    <div className="w-[350px] max-w-sm  rounded-lg shadow dark:bg-gray-800  mt-5 h-72">
       <a href="#">
         <img
-          class="rounded-t-lg w-full h-[50%]"
+          className="rounded-t-lg w-full h-[50%]"
           src={thumbnails.high.url}
           alt="thumbnail"
         />
       </a>
-      <div class="p-2">
+      <div className="p-2">
         <a href="#">
-          <h5 class="mb-1 text-md font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="mb-1 text-md font-bold tracking-tight text-gray-900 dark:text-white">
             {title}
           </h5>
         </a>
-        <p class="mb-1 font-normal text-gray-700 dark:text-gray-400 flex gap-1">
+        <p className="mb-1 font-normal text-gray-700 dark:text-gray-400 flex gap-1">
           {channelTitle}
           <svg
             xmlns="http://www.w3.org/2000/svg"
