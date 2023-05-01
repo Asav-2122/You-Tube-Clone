@@ -37,10 +37,6 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
 
-  // useEffect(() => {
-  //   getSearchQuery(ele);
-  // }, [query]);
-
   const getSearchQuery = (searchedQuery) => {
     console.log(searchedQuery);
     setQuery(searchedQuery);
@@ -117,7 +113,12 @@ const Navbar = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setShowSuggestions(true)}
-              onBlur={() => setShowSuggestions(false)}
+              onBlur={() =>
+                setTimeout(() => {
+                  setShowSuggestions(false);
+                }, 500)
+              }
+              autoComplete="off"
               type="text"
               id="default-input"
               className="w-96 bg-white-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -132,9 +133,13 @@ const Navbar = () => {
               return (
                 <div key={index}>
                   <ul className="flex flex-col">
-                    <li
+                   <Link to={"/results?search_query=" + ele}> <li
                       className="hover:bg-gray-200 ml-3 p-1 flex items-center hover:cursor-pointer"
-                      onClick={()=>{getSearchQuery(ele)}}
+                      onClick={() => {
+                        getSearchQuery(ele);
+                        setShowSuggestions(false);
+                        setSearchQuery(ele)
+                      }}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -152,6 +157,7 @@ const Navbar = () => {
                       </svg>
                       <span className="font-semibold">{ele}</span>
                     </li>
+                    </Link>
                   </ul>
                 </div>
               );
