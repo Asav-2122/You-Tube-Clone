@@ -8,7 +8,7 @@ const SearchQueryVideos = () => {
 
   useEffect(() => {
     getSearchQueryVideos();
-  }, []);
+  }, [searchParams]);
 
   const getSearchQueryVideos = () => {
     fetch(
@@ -26,7 +26,7 @@ const SearchQueryVideos = () => {
   return (
     <div className="ml-3">
       {vidoes.map((ele) => (
-        <Link to={"/watch?v=" + ele.id.videoId}>
+        <Link to={"/watch?v=" + ele.id.videoId} key={ele.id.videoId}>
         <div
           className="w-[80vw] rounded-lg shadow dark:bg-gray-800  mt-5 h-56 flex hover:cursor-pointer"
           key={ele?.id?.videoId}

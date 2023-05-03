@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import ChatMessages from './ChatMessages'
 import { useDispatch, useSelector } from 'react-redux'
-import { addMessages } from '../reducers/chatSlice';
+import { addMessages, clearChatBox } from '../reducers/chatSlice';
 import { generateMsg, generateName } from '../utils/helper';
 
 const LiveChat = () => {
@@ -17,7 +17,7 @@ const LiveChat = () => {
         },2000)
         return ()=>{
             clearInterval(interval);
-           
+            dispatch(clearChatBox())
         }
     },[])
   return (

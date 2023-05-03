@@ -45,7 +45,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 sticky w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-        <div className="container flex flex-wrap items-center justify-between mx-auto">
+        <div className="container flex flex-wrap items-center justify-items-center mx-auto">
           <div className="flex items-center gap-3">
             <span
               className="-ml-5 cursor-pointer"
@@ -75,7 +75,7 @@ const Navbar = () => {
               />
             </div>
           </div>
-          <div className="flex md:order-2">
+          {/* <div className="flex md:order-2">
             <button
               type="button"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -104,9 +104,9 @@ const Navbar = () => {
                 ></path>
               </svg>
             </button>
-          </div>
+          </div> */}
           <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            className="ml-80  w-full md:flex md:w-auto md:order-1"
             id="navbar-sticky"
           >
             <input
@@ -127,7 +127,7 @@ const Navbar = () => {
         </div>
       </nav>
       {showSuggestions && (
-        <div className="fixed shadow-lg left-[490px] bg-white rounded-lg w-96">
+        <div className="fixed shadow-lg left-[475px] bg-white rounded-lg w-96">
           {searchSuggestions.length > 0 &&
             searchSuggestions.map((ele, index) => {
               return (

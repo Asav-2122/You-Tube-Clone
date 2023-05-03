@@ -15,10 +15,10 @@ const Sidebar = () => {
       >
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
           <ul className="space-y-2 font-medium flex flex-col gap-4 items-center mt-10">
-            <Link to="/" className="flex flex-col">
+            <Link to="/" className="flex flex-col hover:bg-gray-100">
               <div
                
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ const Sidebar = () => {
                 </svg>
                
               </div>
-              <span className="">Home</span>
+              <span>Home</span>
             </Link>
             <li className="flex flex-col">
               <a
