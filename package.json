@@ -4,7 +4,7 @@
   "description": "youtube  with react",
   "scripts": {
     "start": "parcel ./public/index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build ./public/index.html",
     "test": "jest"
   },
   "author": "Aasav Pandya",

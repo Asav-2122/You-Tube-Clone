@@ -12,7 +12,7 @@ const LiveChat = () => {
             // console.log("API Polling");
            dispatch(addMessages({
             name:generateName(),
-            msg : generateMsg(20),
+            msg :generateMsg(20),
            }))
         },2000)
         return ()=>{
